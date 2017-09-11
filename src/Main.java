@@ -14,7 +14,6 @@ public class Main {
             }
             System.out.println();
         }
-
     }
     public static void printHeading(int[] columnValues){
         System.out.print("++++");
