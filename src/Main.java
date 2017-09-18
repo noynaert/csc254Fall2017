@@ -11,13 +11,34 @@ public class Main {
         double[] list = new double[maxSize];
 
         fileName = fetchFileName(args);
-        maxSize = fetchMaximumSize(arg);
+        maxSize = fetchMaximumSize(args);
 
         System.out.printf("Reading from file %s\n", fileName);
         System.out.printf("Trying to read %d numbers\n", maxSize);
 
         n = readDoubles(5, fileName, list);
         print(list, n);
+
+        double target = -3.141592653;
+        boolean found = contains(target, list, n);
+        System.out.printf("Does the list contain %f? %b\n", target, found);
+    }
+    public static boolean closeEnough(double a, double b, double tolerance){
+        boolean same;
+        same = (Math.abs(a - b) < tolerance);
+        return same;
+    }
+
+    public static boolean contains(double target, double[] list, int n){
+        boolean found = false;
+
+        int i = 0;
+        while(!found && i < n){
+            //found = (target == list[i]);
+            found = closeEnough(target,list[i],0.001);
+            i++;
+        }
+        return found;
     }
 
     public static int fetchMaximumSize(String[] args){
@@ -61,6 +82,7 @@ public class Main {
                 //System.out.printf( "[%d] is %f\n", n, number);
                 list[n] = number;
                 n++;
+
             }
 
             input.close();
