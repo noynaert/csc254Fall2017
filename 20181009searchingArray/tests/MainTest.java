@@ -4,6 +4,17 @@ import static org.junit.Assert.*;
 
 public class MainTest {
     @Test
+
+    public void countSpecialCharacters() throws Exception {
+        assertEquals(3, Main.countSpecialCharacters("+-!"));
+        assertEquals(3, Main.countSpecialCharacters("a+b-c!"));
+        assertEquals(3, Main.countSpecialCharacters("+----!!+!"));
+        assertEquals(3, Main.countSpecialCharacters("+-!"));
+        assertEquals(3, Main.countSpecialCharacters("+-!"));
+
+    }
+
+    @Test
     public void closeEnough() throws Exception {
         assertTrue(Main.closeEnough(5.0, 5.0, Main.DELTA));
         assertFalse(Main.closeEnough(5+Main.DELTA, 5, Main.DELTA));
