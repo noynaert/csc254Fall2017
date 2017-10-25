@@ -1,6 +1,8 @@
 public class Main {
 
     public static void main(String[] args) {
+
+
        Rectangle big = new Rectangle();
        Rectangle small = new Rectangle();
        Rectangle square = new Rectangle();
