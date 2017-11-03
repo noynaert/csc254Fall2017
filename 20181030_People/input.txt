@@ -1,0 +1,4 @@
+Kenneth:72.0
+Susan B. Anthony:70.8
+Fred:68.1
+Bob Smith:84.00

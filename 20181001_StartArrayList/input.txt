@@ -1,0 +1,23 @@
+public static int readPeople(Person[] list, int limit){
+        int n = 0;
+        try {
+            Scanner input = new Scanner(new File("input.txt"));
+            while(n < limit && input.hasNextLine()){
+                String line = input.nextLine().trim();
+                String[] fields  = line.split(":");
+                //list[n++] = new Person(fields[0], Double.parseDouble(fields[1]));
+               if(fields.length == 2) {
+                   String name = fields[0].trim();
+                   double height = Double.parseDouble(fields[1]);
+                   Person p = new Person(name, height);
+                   list[n] = p;
+                   n++;
+               }
+            }
+            input.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        return n;
+    }
