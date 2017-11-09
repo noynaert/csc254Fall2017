@@ -1,4 +1,4 @@
-public class Zombie {
+public class Zombie implements Comparable<Zombie> {
     private String name;
     private double health;
 
@@ -35,12 +35,14 @@ public class Zombie {
                 ", health=" + health +
                 '}';
     }
+    @Override
     public int compareTo(Zombie other){
         int result = 0;
-        result = this.name.compareTo(other.name);
-        if(result != 0){
+        result = this.name.compareToIgnoreCase(other.name);
+
+        if(result == 0) {
             double difference = this.health - other.health;
-            result = (int)(difference * 100.0);
+            result = (int) (difference * 100.0);
         }
 
         return result;

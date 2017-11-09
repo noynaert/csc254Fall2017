@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
 
@@ -9,6 +10,10 @@ public class Main {
         Zombie d = new Zombie("Dave");
         Zombie e = new Zombie("Amie");
         Zombie f = new Zombie();
+
+        Object o = new Object();
+        System.out.println(o.toString());
+        System.out.println(o.hashCode());
 
 
         System.out.println(a);
@@ -24,7 +29,7 @@ public class Main {
         hoard.add(f);
         hoard.add(new Zombie("Stan"));
         hoard.add(new Zombie("Barb"));
-        Object o = new Object();
+
         //hoard.add(new Object());
 
         ArrayList<Object> boringList;
@@ -43,14 +48,16 @@ public class Main {
         hoard.add(a);
         hoard.add(a);
         hoard.add(a);
-        printZombies(hoard);
+        print(hoard);
+        Collections.sort(hoard);
+        print(hoard);
 
     }
 
-    public static void print(ArrayList<Object> list) {
+    public  static <T> void print(ArrayList<T> list) {
         System.out.println("--=-=-=-=-=-=-=-=-=-=-=-=-=-");
         for (int i = 0; i < list.size(); i++) {
-            System.out.printf("[%d] %s\n", i, list.get(i).getClass());
+            System.out.printf("[%d] %s\n", i, list.get(i));
         }
         System.out.println("Size is " + list.size());
     }
@@ -64,12 +71,17 @@ public class Main {
     }
 
     //public static void selectionSort(double[] list, int n){
-    public static void selectionSort(ArrayList<Zombie> list) {
-        for (int i = 0; i < list.size() - 1; i++) {
-            Zombie currentMin = list.get(i);
-            for (int j = i + 1; j < list.size(); j++) {
-                if (currentMin.compareTo(list.get(j)) < 0) {
+//    public static void selectionSort(ArrayList<Zombie> list) {
+//        for (int i = 0; i < list.size() - 1; i++) {
+//            Zombie currentMin = list.get(i);
+//            for (int j = i + 1; j < list.size(); j++) {
+//                if (currentMin.compareTo(list.get(j)) < 0) {
+//
+//                }
+//            }
+//        }
 
-                }
-            }
-        }
+    public static void lazySort(ArrayList<Zombie> list){
+        Collections.sort(list);  //Imagine this is a sort that has not been tested.
+    }
+}
