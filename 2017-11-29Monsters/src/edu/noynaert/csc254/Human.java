@@ -27,6 +27,7 @@ public class Human extends Entity implements Mobile, Comparable<Human>{
 
 
 
+
     public String getPronoun() {
         return pronoun;
     }

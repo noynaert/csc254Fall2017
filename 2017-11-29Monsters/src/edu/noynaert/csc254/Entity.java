@@ -27,7 +27,7 @@ package edu.noynaert.csc254;
  *                A good source is https://emojipedia.org
  *                Using emoji will mess up printing because they are not standard width.
  */
-public class Entity {
+public abstract class Entity {
     static String symbol = "\uD83D\uDC7D";// https://emojipedia.org/white-question-mark-ornament/
 
     static int nextID = 10001;
@@ -45,6 +45,7 @@ public class Entity {
         nextID++;
         health = defaultHealth;
     }
+    public abstract void swings();
 
     public String getSymbol() {
         return symbol;

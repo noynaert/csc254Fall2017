@@ -11,7 +11,7 @@ public class Main {
         int rows = 4;
         int columns = 3;
         int placed;
-        Entity sampleGeneric = new Entity();
+        //Entity sampleGeneric = new Entity();
         Human sampleHuman = new Human();
         GameBoard board = new GameBoard(rows, columns);
         demoTime();
@@ -20,8 +20,8 @@ public class Main {
 
         board.print();
         Object o = new Object();
-        placed = board.randomFill(sampleGeneric.getClass(), 10);
-        System.out.println("GenericEntities Placed: " + placed);
+        //placed = board.randomFill(sampleGeneric.getClass(), 10);
+        //System.out.println("GenericEntities Placed: " + placed);
         placed = board.randomFill(sampleHuman.getClass(), 10);
         System.out.println("Humans Placed: " + placed);
 
