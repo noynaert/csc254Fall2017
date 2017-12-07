@@ -45,7 +45,11 @@ public abstract class Entity {
         nextID++;
         health = defaultHealth;
     }
-    public abstract void swings();
+    public Entity(Entity e){
+        this.id = e.id;
+        this.health = e.health;
+    }
+   // public abstract void swings();
 
     public String getSymbol() {
         return symbol;

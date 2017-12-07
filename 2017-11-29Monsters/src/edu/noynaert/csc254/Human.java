@@ -5,7 +5,7 @@ public class Human extends Entity implements Mobile, Comparable<Human>{
     String pronoun;
     String weapon;
     double strength;
-    double health;
+    //double health;
 
     public Human(){
         super();
@@ -23,6 +23,15 @@ public class Human extends Entity implements Mobile, Comparable<Human>{
             weapon = "stick";
             strength = 0.5;
         }
+    }
+    public Human(Human h){
+        super(h);
+        this.symbol = h.symbol;
+        this.pronoun = h.pronoun;
+        this.weapon =  h.getWeapon();
+        this.strength = h.strength;
+
+
     }
 
 

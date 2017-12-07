@@ -1,8 +1,14 @@
 package edu.noynaert.csc254;
 
 public class Blob extends Entity{
+//    @Override
+//    public void swings() {
+//
+//    }
     @Override
-    public void swings() {
+    public String toString(){
+        String result = null;
 
+        return result;
     }
 }

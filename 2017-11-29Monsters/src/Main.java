@@ -1,9 +1,13 @@
 import edu.missouriwestern.noynaert.gameBoard.GameBoard;
+import edu.missouriwestern.noynaert.gameBoard.MyDice;
+import edu.noynaert.csc254.Blob;
 import edu.noynaert.csc254.Entity;
 import edu.noynaert.csc254.Human;
 
+import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
 
@@ -28,6 +32,39 @@ public class Main {
         board.print();
         System.out.println(sampleHuman);
         board.play(5);
+
+        Blob bob = new Blob();
+        System.out.println(bob.toString());
+        demoTime();
+        for(int i=0;i<10;i++)
+            System.out.println(Math.random());
+        for(int i=0;i<10;i++){
+            System.out.println("1 - 10      " + ((int)(Math.random() * 10) + 1));
+        }
+
+        Random generator = new Random();
+        for(int i=0;i<10;i++){
+            System.out.println(generator.nextInt() + " -- " + generator.nextInt(5));
+        }
+        MyDice dice = new MyDice();
+        System.out.println(MyDice.r.nextDouble());
+
+
+        BigDecimal x = new BigDecimal(999999999999.888888888888888888888);
+        BigDecimal y = new BigDecimal(1.0);
+        BigDecimal z  = BigDecimal.TEN;
+        x = x.add(y);
+        String s = "Mary";
+        s += "Smith";
+        System.out.println(s);
+        System.out.println(z);
+
+        Human doppleganger = new Human(sampleHuman);
+        System.out.println(sampleHuman);
+        System.out.println(doppleganger);
+
+
+
     }
 
 
